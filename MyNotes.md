@@ -26,6 +26,57 @@
 
 ### Chapter 01 - What is Cloud Computing?
 
+- Old days:
+  - Host the entire infrastructure
+  - Hire a group of developers
+  - Design, build and host app
+
+- What is cloud computing?
+  - AWS (Amazon Web Services)
+  - HA (High Availability)
+
+- **6 Advantages of Cloud Computing** (MEMORIZE)
+  1. Trade capital expense for variable expense
+     1. CAPEX (capital expense) vs OPEX (operating expense or variable expense)
+  2. Benefit from massive economies of scale
+     1. AWS is a big bitch, so acquires hardware on the cheap, b.
+  3. Stop guessing capacity
+     1. Own nothing. Lease everything.
+     2. Pay only for what you consumer, when you consume it
+  4. Increase speed and agility
+  5. Stop spending money running and maintaining data centers
+  6. Go global in minutes
+
+- `Virtualization` *is one of the core techologies that has enabled cloud computing to go mainstream and has given birth to cloud providers such as AWS, Microsoft Azure, and Google Cloud Platform (GCP)
+- `Hypervisors` have made it possible to emulate the physical hardware components of a single physical server as multiple virtual components (`Virtual Machines (VMs)`)
+- A `hypervisor` is essentially a piece of software that sits between the actual physical hardware and the VMs
+- AWS Management Console, CLI (command-line interface), APIs (application programming interfaces)
+- `Software-as-a-Service` (SaaS)
+
+- Benefits of `virtualization`:
+  1. Efficient use of hardware resources via VMs
+  2. Reduced cost by sharing physical resources
+  3. Self-service provisioning and scaling
+  4. Improved security
+  5. Flexibility in type of servers provisioned
+
+- Cloud computing models:
+  1. `Infrastructure as a Service (IaaS)`
+     1. `line-of-business` (LOB) applications
+     2. Greatest flexibility to configure the underlying network, storage, and compute services that power LOB applicaitons
+     3. Amazon Elastic Computer Cloud (EC2)
+  2. `Platform as a Service (PaaS)`
+     1. Examples: AWS Elastic Beanstalk, AWS OpsWorks, AWS Lambda, Amazon Relational Database Service (RDS)
+  3. `Software as a Service (SaaS)`
+
+- Cloud deployment models:
+  1. `Public Cloud`
+  2. `Private Cloud`
+  3. `Hybrid Cloud`
+
+Answer Summary:
+
+- Missed one question because I didn't read the prompt properly. No biggie.
 
 ### Chapter 02 - Introduction to AWS and the Global Infrastructure
 
