@@ -3,7 +3,16 @@
 - [AWS - Certified Cloud Practioner (CCP) Notes](#aws---certified-cloud-practioner-ccp-notes)
   - [Section 1: Cloud Concepts](#section-1-cloud-concepts)
     - [Chapter 01 - What is Cloud Computing?](#chapter-01---what-is-cloud-computing)
+      - [What is cloud computing?](#what-is-cloud-computing)
+      - [Virtualization Basics](#virtualization-basics)
+      - [Cloud computing models](#cloud-computing-models)
+      - [Cloud deployment models](#cloud-deployment-models)
     - [Chapter 02 - Introduction to AWS and the Global Infrastructure](#chapter-02---introduction-to-aws-and-the-global-infrastructure)
+      - [What is AWS](#what-is-aws)
+      - [AWS Global Infrastructure](#aws-global-infrastructure)
+      - [AWS Support Plans](#aws-support-plans)
+      - [AWS Service Health Dashboard](#aws-service-health-dashboard)
+      - [AWS Acceptable use Policy (AuP)](#aws-acceptable-use-policy-aup)
     - [Chapter 03 - Exploring AWS Accounts, Multi-Account Strategy, and AWS Organizations](#chapter-03---exploring-aws-accounts-multi-account-strategy-and-aws-organizations)
   - [Section 02: AWS Technologies](#section-02-aws-technologies)
     - [Chapter 04 - Identity and Access Management](#chapter-04---identity-and-access-management)
@@ -31,9 +40,10 @@
   - Hire a group of developers
   - Design, build and host app
 
-- What is cloud computing?
-  - AWS (Amazon Web Services)
-  - HA (High Availability)
+#### What is cloud computing?
+
+- AWS (Amazon Web Services)
+- HA (High Availability)
 
 - **6 Advantages of Cloud Computing** (MEMORIZE)
   1. Trade capital expense for variable expense
@@ -46,6 +56,8 @@
   4. Increase speed and agility
   5. Stop spending money running and maintaining data centers
   6. Go global in minutes
+
+#### Virtualization Basics
 
 - `Virtualization` *is one of the core techologies that has enabled cloud computing to go mainstream and has given birth to cloud providers such as AWS, Microsoft Azure, and Google Cloud Platform (GCP)
 - `Hypervisors` have made it possible to emulate the physical hardware components of a single physical server as multiple virtual components (`Virtual Machines (VMs)`)
@@ -60,7 +72,8 @@
   4. Improved security
   5. Flexibility in type of servers provisioned
 
-- Cloud computing models:
+#### Cloud computing models
+
   1. `Infrastructure as a Service (IaaS)`
      1. `line-of-business` (LOB) applications
      2. Greatest flexibility to configure the underlying network, storage, and compute services that power LOB applicaitons
@@ -69,7 +82,8 @@
      1. Examples: AWS Elastic Beanstalk, AWS OpsWorks, AWS Lambda, Amazon Relational Database Service (RDS)
   3. `Software as a Service (SaaS)`
 
-- Cloud deployment models:
+#### Cloud deployment models
+
   1. `Public Cloud`
   2. `Private Cloud`
   3. `Hybrid Cloud`
@@ -80,6 +94,17 @@ Answer Summary:
 
 ### Chapter 02 - Introduction to AWS and the Global Infrastructure
 
+- Disaster Recover (DR)
+
+#### What is AWS
+
+#### AWS Global Infrastructure
+
+#### AWS Support Plans
+
+#### AWS Service Health Dashboard
+
+#### AWS Acceptable use Policy (AuP)
 
 ### Chapter 03 - Exploring AWS Accounts, Multi-Account Strategy, and AWS Organizations
 
