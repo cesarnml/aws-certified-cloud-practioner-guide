@@ -10,6 +10,12 @@
     - [Chapter 02 - Introduction to AWS and the Global Infrastructure](#chapter-02---introduction-to-aws-and-the-global-infrastructure)
       - [What is AWS](#what-is-aws)
       - [AWS Global Infrastructure](#aws-global-infrastructure)
+        - [Regions](#regions)
+        - [AZs](#azs)
+        - [Edge locations (aid with `Content Delivery Network (CDN)/caching services`)](#edge-locations-aid-with-content-delivery-network-cdncaching-services)
+          - [Regional edge caches](#regional-edge-caches)
+        - [Regional Servies](#regional-servies)
+        - [Global Services](#global-services)
       - [AWS Support Plans](#aws-support-plans)
       - [AWS Service Health Dashboard](#aws-service-health-dashboard)
       - [AWS Acceptable use Policy (AuP)](#aws-acceptable-use-policy-aup)
@@ -98,7 +104,63 @@ Answer Summary:
 
 #### What is AWS
 
+- Largest cloud-computing provider
+- 175 distinct services
+- Began in 2002 (20 years ago)
+- 2004 Launch of Simple Queue Service (SQS)
+- 2006 AWS Official Launch (SQS, EC2, S3)
+- 2010 Amazon.com migrates to AWS
+
 #### AWS Global Infrastructure
+
+- Comprises multiple `data centers` that house all the `servers`, `storage devices`, and `networking equpment` across different `regions`
+- `AWS Region` is a physical location where AWS will host a cluster of `data centers`
+- Each reigion is comprised of `Availability Zones` (AZs) (within 100km of each other)
+- 77 AZs within 24 Regions
+
+##### Regions
+
+- A `region` is a minimum of 2 AZs
+- `us-east-1` - North Virginia region - 6 AZs - First among equals
+
+Benefits:
+
+1. Closer means faster UX
+2. Compliance and regulation laws region specific
+3. DR mitigation if a specific region goes down
+
+##### AZs
+
+- AZs linked by high-bandwidth, low-latency private metro-fiber links
+- Distribute traffic among AZs via Amazon `Elastic Load Balancer` (ELB)
+
+##### Edge locations (aid with `Content Delivery Network (CDN)/caching services`)
+
+- Provide infrastructure and software that enable data to be processed and analyzed closer to the end user
+- Uses smart caching of frequently access data near physical localtion of end users (separate from Region/AZ location)
+- `Amazon's CloudFront` - CDN service on the edge
+- `Amazon Simple Storage Service (Amazon S3)` - object-storage solution for any type of data
+- `Amazon S3 Transfer Acceleration` - accelerate data transfer from S3 to the edge
+- Ede locations are connected to AWS regions via `AWS backbone network` (100 Gigabit Ethernet GbE)
+- Main limitation is that edge cache size is limited. Infrequently accessed data is removed from cache to make room for new content
+
+###### Regional edge caches
+
+- Bigger cache, store infrquently used content longer so edge locations can pull from regional edge caches instead of AZs
+
+##### Regional Servies
+
+- Relational Database Service (RDS) database (services that require a selection of a region where the physical infrastructure will reside (servers, storage, databases))
+
+##### Global Services
+
+- Most services are region based
+- As an example of global service, take indiviual user accounts (`Identity and Access Management (IAM)`)
+- Other examples of global services:
+  - `AWS IAM`
+  - `Amazon CloudFront`
+  - `Amazon Route 53`
+  - `Amazon S3`
 
 #### AWS Support Plans
 
