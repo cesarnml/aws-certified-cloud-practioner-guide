@@ -251,7 +251,22 @@ Benefits:
 
 #### Why have multi-account AWS environment
 
+- `User Acceptance Testing (UAT)`
+- Each environment should be isolated within a specific `AWS Account`
+  - Sandbox (Experimental)
+  - Development
+  - Testing
+  - Production
+- Helps limit the blast radius of a catastrophic failure
+- Benefits of a multi-account architecure:
+  - Administrative isolation between workloads
+  - Limited visibility and disoverability of workloads
+  - Isolation of security and identity management
+  - Make a *separate AWS identity management account* and enable `cross-account access` to follow the `principle of least privilege`
+  - Isolation of recovery or audit accounts
+
 #### AWS Landing Zone
+
 
 #### AWS Control Tower
 
