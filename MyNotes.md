@@ -163,6 +163,9 @@ Benefits:
 - `Amazon Storage Gateway`
   - Enables offloading on-premise storage to Amazon S3
   - Can be used as backup if data latency is sensitive
+  - `Amazon Outposts` - 42U rack, scalable from 1 rack to 96 racks (mini AWS on premise)
+    - Helps meet strigent local data-residency requirements
+    - Can run `ECS`, `EKS (Elastic Kubernetes Service)`, `EMR (Elastic Map Reduce)`
 
 ##### Global Services
 
@@ -176,9 +179,60 @@ Benefits:
 
 #### AWS Support Plans
 
+- `Basic`, `Developer`, `Business`, `Enterprise`
+- `Basic Support Plan`
+  - No technical support!
+  - Customer support for any `account-related issues`, such as `bill payment` and `logging issues`
+  - Access to documentation, whitepapers, and forums
+  - Access suport via `email, chat and phone 24/7` - Amazon calls you
+  - Access to `7 basic Trusted Advisor tools` checks
+- `Developer Support Plan`
+  - Ideal if you *experimenting or thesting with AWS*
+  - Meant for non-production workloads and gives access to technical support
+  - Reasonable price
+  - Support focus on problems with technical configuration of AWS use cases (does not offer applicaiton-layer support)
+  - Email support during business hours (no phone supoort)
+  - General cases (`within 24 hour response time`). System-impared issues (`within 12 hours`)
+- `Business Support Plan`
+  - 24/7 support via email, chat, and telephone.
+  - Critical down system (`1 hour response time`)
+  - Unlike `Developer` plan, support is offered for interoperability issuews between AWS resources and 3-party software
+  - Addtional cost, can get `AWS Infrastructure Event Management (IEM)`
+  - IEM helps with product launches and migration task and post-event review
+  - `Full-set of AWS trusted Advisor` checks
+    - Five Categories of support:
+      1. Cost Optimization
+      2. Security
+      3. Fault Tolerance
+      4. Performance
+      5. Service Limits
+- `Enterprise Support Plan`
+  - 15,000/month (starts at)
+  - Designated `Technical Account Manager (TAM)`
+    - actively monitor your environment
+    - helps with planning, design and implementation of cloud projects
+    - Access to Well-Architected reviews
+    - `Service-Level Agreements (SLAs)`
+      - 24/7 email, chat and phone support
+      - `15 minute response time` for business-critical technical issues
+
+- Amazon support plan summary:
+![Amazon support plan summary](./AmazonSupportPlans.png)
+
 #### AWS Service Health Dashboard
 
+- `Service Health Dashboard` - Shows the health status of all AWS services (is my system down?)
+- `Personal Health Dashboard` - Published availability status of services relevant to your workloads
+  - Personalized view of service health
+  - Proactive notificaitons
+  - Detail torubleshooting guidance
+  - Integration and automation (integrates with CloudWatch events and can launch Lambdas to automate solutions)
+  - Aggregate health events across AWS Organizations
+
 #### AWS Acceptable use Policy (AuP)
+
+- `Acceptable use Policy (AuP)`
+  - Describes acceptable and prohibitive uses of AWS resources
 
 ### Chapter 03 - Exploring AWS Accounts, Multi-Account Strategy, and AWS Organizations
 
