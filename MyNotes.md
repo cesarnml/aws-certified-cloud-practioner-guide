@@ -21,6 +21,17 @@
       - [AWS Service Health Dashboard](#aws-service-health-dashboard)
       - [AWS Acceptable use Policy (AuP)](#aws-acceptable-use-policy-aup)
     - [Chapter 03 - Exploring AWS Accounts, Multi-Account Strategy, and AWS Organizations](#chapter-03---exploring-aws-accounts-multi-account-strategy-and-aws-organizations)
+      - [Why have multi-account AWS environment](#why-have-multi-account-aws-environment)
+      - [AWS Landing Zone](#aws-landing-zone)
+      - [AWS Control Tower](#aws-control-tower)
+      - [AWS Organizations](#aws-organizations)
+        - [Consolidated billing](#consolidated-billing)
+        - [How many AWS accounts do you need?](#how-many-aws-accounts-do-you-need)
+          - [Core AWS OUs (Organization Unit)](#core-aws-ous-organization-unit)
+          - [Additional OUs](#additional-ous)
+        - [AWS Free Tier](#aws-free-tier)
+        - [Exercise 3.1 - Setting up your first AWS Free Tier](#exercise-31---setting-up-your-first-aws-free-tier)
+        - [Exercise 3.2 - Setting up a billing alarm](#exercise-32---setting-up-a-billing-alarm)
   - [Section 02: AWS Technologies](#section-02-aws-technologies)
     - [Chapter 04 - Identity and Access Management](#chapter-04---identity-and-access-management)
     - [Chapter 05 - Amazon Simple Storage Service (S3)](#chapter-05---amazon-simple-storage-service-s3)
@@ -236,6 +247,29 @@ Benefits:
 
 ### Chapter 03 - Exploring AWS Accounts, Multi-Account Strategy, and AWS Organizations
 
+- Manage multiple `AWS Accounts` using `AWS Organizations`
+
+#### Why have multi-account AWS environment
+
+#### AWS Landing Zone
+
+#### AWS Control Tower
+
+#### AWS Organizations
+
+##### Consolidated billing
+
+##### How many AWS accounts do you need?
+
+###### Core AWS OUs (Organization Unit)
+
+###### Additional OUs
+
+##### AWS Free Tier
+
+##### Exercise 3.1 - Setting up your first AWS Free Tier
+
+##### Exercise 3.2 - Setting up a billing alarm
 
 ## Section 02: AWS Technologies
 
