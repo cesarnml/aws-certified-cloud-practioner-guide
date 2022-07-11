@@ -15,6 +15,7 @@
         - [Edge locations (aid with `Content Delivery Network (CDN)/caching services`)](#edge-locations-aid-with-content-delivery-network-cdncaching-services)
           - [Regional edge caches](#regional-edge-caches)
         - [Regional Servies](#regional-servies)
+        - [On-Premise Services](#on-premise-services)
         - [Global Services](#global-services)
       - [AWS Support Plans](#aws-support-plans)
       - [AWS Service Health Dashboard](#aws-service-health-dashboard)
@@ -151,6 +152,17 @@ Benefits:
 ##### Regional Servies
 
 - Relational Database Service (RDS) database (services that require a selection of a region where the physical infrastructure will reside (servers, storage, databases))
+
+##### On-Premise Services
+
+- `Amazon Snow Family`
+  - Snowball Edge Devices
+  - Snowcone
+  - Snowmobile
+    - Devices facilitate the transfer of larege amounts of data to AWS S3
+- `Amazon Storage Gateway`
+  - Enables offloading on-premise storage to Amazon S3
+  - Can be used as backup if data latency is sensitive
 
 ##### Global Services
 
