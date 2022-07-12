@@ -257,7 +257,7 @@ Benefits:
   - Development
   - Testing
   - Production
-- Helps limit the blast radius of a catastrophic failure
+- Multiple accounts helps limit the blast radius of a catastrophic failure
 - Benefits of a multi-account architecure:
   - Administrative isolation between workloads
   - Limited visibility and disoverability of workloads
@@ -267,18 +267,59 @@ Benefits:
 
 #### AWS Landing Zone
 
+- `AWS Landing Zone` deprecated in favor or `AWS Control Tower`
 
 #### AWS Control Tower
 
+- Service that automates the building of landing zones following best practice blue prints
+  - Creates an AWS Organizations and multi-account setup
+  - Uses `AWS Single Sign-On (SSO)` default directory services
+  - Account federation using SSO
+  - Centralized logging with AWS CloudTrail and AWS Config
+
 #### AWS Organizations
 
+- `AWS Organizations` is used to manage multi-accounts
+  - Free service
+- 1 `management account (previously termed master account)`
+  - Other accounts are `member accounts` of the organization
+- Allows for scoping allowed services per account level
+- Related accounts can be grouped into `Organization Units (OUs)`
+- `Service Control Policies (SCPs)` can be applied to OUs or directly to accounts
+
+![](./AWSOrganizations.png)
+
 ##### Consolidated billing
+
+- AWS Organizations can be deployed with:
+  - `all features`
+    - Enables Service Control Policies and Tag policies along with consolidated billing
+  - `consolidated billing feature`
+- The `management account` is responsible for all billing incurred by member accounts
+- Consolidate account benefits:
+  - single bill
+  - easy tracking
+  - `volume discounts`
+  - free service
 
 ##### How many AWS accounts do you need?
 
 ###### Core AWS OUs (Organization Unit)
 
+- At a minimum, should create an `infrastructure OU` adnd a `security OU`
+- Infrastructure OU
+  - contain services that can be shared accross all accounts, i.e. repository of `Amazon Machine Images (AMI)`
+- Security OU
+  - centralized `Identity and Access Management (IAM)` account to host user accounts, groups, roles
+    - make use of `cross-account` policies to grant identities account access
+![](./FoundationalAndAdditionalOUs.png)
+
 ###### Additional OUs
+
+- `Sandbox OUs` - place to experiment where critical failures will not impact proudction and with expensive caps in place
+- `Workloads OUs` - Includes environments such as Production, Dev, Testing
+- `Suspended OUs` - Kept for auditing or compliance
+
 
 ##### AWS Free Tier
 
