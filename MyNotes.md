@@ -34,6 +34,17 @@
         - [Exercise 3.2 - Setting up a billing alarm](#exercise-32---setting-up-a-billing-alarm)
   - [Section 02: AWS Technologies](#section-02-aws-technologies)
     - [Chapter 04 - Identity and Access Management](#chapter-04---identity-and-access-management)
+      - [Introduction to the AWS IAM service](#introduction-to-the-aws-iam-service)
+      - [Multi-Factor Authentication (MFA) for root user](#multi-factor-authentication-mfa-for-root-user)
+      - [Importance of IAM password policies](#importance-of-iam-password-policies)
+      - [IAM users vs IAM groups](#iam-users-vs-iam-groups)
+      - [IAM policies](#iam-policies)
+      - [Reviewing credital reports](#reviewing-credital-reports)
+      - [Exercise 4.1 Create IAM group](#exercise-41-create-iam-group)
+      - [Exercise 4.2 Create IAM user and attach to IAM group](#exercise-42-create-iam-user-and-attach-to-iam-group)
+      - [Exercise 4.3 Logging into AWS account as IAM user](#exercise-43-logging-into-aws-account-as-iam-user)
+      - [AWS CLI](#aws-cli)
+      - [Accessing AWS platform via AWS CLI](#accessing-aws-platform-via-aws-cli)
     - [Chapter 05 - Amazon Simple Storage Service (S3)](#chapter-05---amazon-simple-storage-service-s3)
     - [Chapter 06 - AWS Networking Services - VPC, Route53, CloudFront](#chapter-06---aws-networking-services---vpc-route53-cloudfront)
     - [Chapter 07 - AWS Compute Services](#chapter-07---aws-compute-services)
@@ -355,6 +366,30 @@ Benefits:
 ## Section 02: AWS Technologies
 
 ### Chapter 04 - Identity and Access Management
+
+- `AWS Identity and Access Management (IAM)` is an `authentication` and `authorization` service that enables you to decide who or what can access the AWS services on your account and what these entities are permitted to do in your account
+
+#### Introduction to the AWS IAM service
+
+#### Multi-Factor Authentication (MFA) for root user
+
+#### Importance of IAM password policies
+
+#### IAM users vs IAM groups
+
+#### IAM policies
+
+#### Reviewing credital reports
+
+#### Exercise 4.1 Create IAM group
+
+#### Exercise 4.2 Create IAM user and attach to IAM group
+
+#### Exercise 4.3 Logging into AWS account as IAM user
+
+#### AWS CLI
+
+#### Accessing AWS platform via AWS CLI
 
 ### Chapter 05 - Amazon Simple Storage Service (S3)
 
