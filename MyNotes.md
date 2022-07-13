@@ -34,17 +34,12 @@
         - [Exercise 3.2 - Setting up a billing alarm](#exercise-32---setting-up-a-billing-alarm)
   - [Section 02: AWS Technologies](#section-02-aws-technologies)
     - [Chapter 04 - Identity and Access Management](#chapter-04---identity-and-access-management)
-      - [Introduction to the AWS IAM service](#introduction-to-the-aws-iam-service)
-      - [Multi-Factor Authentication (MFA) for root user](#multi-factor-authentication-mfa-for-root-user)
-      - [Importance of IAM password policies](#importance-of-iam-password-policies)
-      - [IAM users vs IAM groups](#iam-users-vs-iam-groups)
       - [IAM policies](#iam-policies)
+        - [Type of Identity-based Policies](#type-of-identity-based-policies)
+      - [Amazon Resource Name (ARN)](#amazon-resource-name-arn)
+      - [IAM Roles](#iam-roles)
       - [Reviewing credital reports](#reviewing-credital-reports)
-      - [Exercise 4.1 Create IAM group](#exercise-41-create-iam-group)
-      - [Exercise 4.2 Create IAM user and attach to IAM group](#exercise-42-create-iam-user-and-attach-to-iam-group)
-      - [Exercise 4.3 Logging into AWS account as IAM user](#exercise-43-logging-into-aws-account-as-iam-user)
       - [AWS CLI](#aws-cli)
-      - [Accessing AWS platform via AWS CLI](#accessing-aws-platform-via-aws-cli)
     - [Chapter 05 - Amazon Simple Storage Service (S3)](#chapter-05---amazon-simple-storage-service-s3)
     - [Chapter 06 - AWS Networking Services - VPC, Route53, CloudFront](#chapter-06---aws-networking-services---vpc-route53-cloudfront)
     - [Chapter 07 - AWS Compute Services](#chapter-07---aws-compute-services)
@@ -369,27 +364,68 @@ Benefits:
 
 - `AWS Identity and Access Management (IAM)` is an `authentication` and `authorization` service that enables you to decide who or what can access the AWS services on your account and what these entities are permitted to do in your account
 
-#### Introduction to the AWS IAM service
-
-#### Multi-Factor Authentication (MFA) for root user
-
-#### Importance of IAM password policies
-
-#### IAM users vs IAM groups
-
 #### IAM policies
+
+- `IAM policies` are objects attached to a given `IAM identity` (user, group, or role). These policies define what the identity can or cannot do within the AWS account and are written as `JSON documents`
+
+![](./IAMPolicy.png)
+
+- 6 Type of Policies:
+  1. `Identity-based policies`
+     - Policies attached to IAM identities (users, groups, roles); limited to within account entities
+  2. `Resource-based policies`
+     - Attached to a specific resource (can allow for external AWS account access or even anonymous access)
+  3. `Permission boundaries`
+     - limited the permissions that other permissions can grant to IAM entity
+  4. `Organization Service Control Policies (SCPs)`
+     - sets maximum permissions for account members of an organization
+  5. `Access Control Lists (ACLs)`
+     - permissions that manage access to certain resources (grant basic read/write permissions)
+     - do not use JSON structure
+  6. `Session policies`
+     - permissions when accessing a resource programatically
+
+##### Type of Identity-based Policies
+
+- `Managed AWS policies`
+  - standard policy templates that are managed by AWS and cannot be edited by the customer
+- `Customer-managed policies`
+  - user created policies that can be edited by the customer
+- `Inline policies`
+  - policies that are createed and directly attached to an IAM identity
+
+#### Amazon Resource Name (ARN)
+
+- Used to uniquely identity an AWS resource
+  - `arn:partition:service:region:account-id:resource-type:resource-id`
+  - `resource-type` and `resource-id` designation vary by service
+
+- `IAM policy simulator` can be used to test out policies or troubleshoot any access issues
+
+#### IAM Roles
+
+- Not attached to a specific IAM entity
+- Mainly assumed by services to temporary grant them access to AWS resources
+- Use cases:
+  1. An AWS service that needs access to another AWS service (EC2 running Django needs access to RDS service)
+  2. External IAM user needs access to internal services
+  3. A federated user needs access to resources
+     - `Identity Provider (Idp)`
+- Elimates the need to create an IAM user for external user access to resources
+- IAM roles make use of `Security Token Service (STS)`
+  - Assigns the following to the identity that assumes the role:
+    - `access key ID`
+    - `secret access key`
+    - `security token`
 
 #### Reviewing credital reports
 
-#### Exercise 4.1 Create IAM group
-
-#### Exercise 4.2 Create IAM user and attach to IAM group
-
-#### Exercise 4.3 Logging into AWS account as IAM user
+- Allows for auditting of IAM identities
 
 #### AWS CLI
 
-#### Accessing AWS platform via AWS CLI
+- allows for programatic access to AWS services
+- `aws configure` - begin configuration process (need access key ID, access secret key, default region, default format)
 
 ### Chapter 05 - Amazon Simple Storage Service (S3)
 
