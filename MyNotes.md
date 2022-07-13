@@ -323,9 +323,33 @@ Benefits:
 
 ##### AWS Free Tier
 
+- 12 months on Free Tier for new accounts
+- 85 AWS technologies and services
+- 5 GB of Amazon S3, Launch `t.2micro` EC2 instance (750 hours a month (730 hours in a month))
+- Run `Amazon Relation Database Service (RDS)` (for 750 hours a month)
+- Free tools:
+  - `AWS CloudFormation`
+    - Infrastructure as code (templates that launch and configure AWS services)
+  - `Amazon Elastic Beanstalk (EB)`
+    - Orchestraction service that provisions necessary infrastructure to power your app (S3 buckets, EC2 instances, load balancers, etc.)
+- Always free servies (limited offering)
+  - `Amazon CloudWatch` - 10 custom metrics, 10 alarms, 1 million API requests
+  - `Amazon Lambda` - serviceless compute service that allows you to run code in response to events
+    - 1 million request or 3.2 million seconds of computer/month
+  - `AWS Organizations` - centrally manage and control multi-accounts.
+- Free trials:
+  - `Amazon Workspaces` - virtual desktops running Linus or Windows
+  - `Amazon Detective` - Analyze and visualize security data
+  - `Amazon Redshift` - Data warehousing solution
+
 ##### Exercise 3.1 - Setting up your first AWS Free Tier
 
+- No notes
+
 ##### Exercise 3.2 - Setting up a billing alarm
+
+- Don't forget to terminate labs in order to minimize charges
+- Setup a $10 billing threshold alarm
 
 ## Section 02: AWS Technologies
 
