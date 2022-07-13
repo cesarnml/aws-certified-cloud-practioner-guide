@@ -54,14 +54,14 @@
 ### Chapter 01 - What is Cloud Computing?
 
 - Old days:
-  - Host the entire infrastructure
-  - Hire a group of developers
+  - Host entire infrastructure on-premise
+  - Hire a group of developers and IT guys to setup/maintain infrastructure
   - Design, build and host app
 
 #### What is cloud computing?
 
-- AWS (Amazon Web Services)
-- HA (High Availability)
+- `AWS` (Amazon Web Services)
+- `HA` (High Availability)
 
 - **6 Advantages of Cloud Computing** (MEMORIZE)
   1. Trade capital expense for variable expense
@@ -70,14 +70,14 @@
      1. AWS is a big bitch, so acquires hardware on the cheap, b.
   3. Stop guessing capacity
      1. Own nothing. Lease everything.
-     2. Pay only for what you consumer, when you consume it
+     2. Pay only for what you consume, when you consume it
   4. Increase speed and agility
   5. Stop spending money running and maintaining data centers
   6. Go global in minutes
 
 #### Virtualization Basics
 
-- `Virtualization` *is one of the core techologies that has enabled cloud computing to go mainstream and has given birth to cloud providers such as AWS, Microsoft Azure, and Google Cloud Platform (GCP)
+- `Virtualization` *is one of the core techologies that has enabled cloud computing to go mainstream* and has given birth to cloud providers such as AWS, Microsoft Azure, and Google Cloud Platform (GCP)
 - `Hypervisors` have made it possible to emulate the physical hardware components of a single physical server as multiple virtual components (`Virtual Machines (VMs)`)
 - A `hypervisor` is essentially a piece of software that sits between the actual physical hardware and the VMs
 - AWS Management Console, CLI (command-line interface), APIs (application programming interfaces)
@@ -99,6 +99,7 @@
   2. `Platform as a Service (PaaS)`
      1. Examples: AWS Elastic Beanstalk, AWS OpsWorks, AWS Lambda, Amazon Relational Database Service (RDS)
   3. `Software as a Service (SaaS)`
+     1. Dropbox
 
 #### Cloud deployment models
 
@@ -125,7 +126,7 @@ Answer Summary:
 
 #### AWS Global Infrastructure
 
-- Comprises multiple `data centers` that house all the `servers`, `storage devices`, and `networking equpment` across different `regions`
+- Comprises multiple `data centers` that house all the `servers`, `storage devices`, and `networking equipment` across different `regions`
 - `AWS Region` is a physical location where AWS will host a cluster of `data centers`
 - Each reigion is comprised of `Availability Zones` (AZs) (within 100km of each other)
 - 77 AZs within 24 Regions
@@ -153,7 +154,7 @@ Benefits:
 - `Amazon's CloudFront` - CDN service on the edge
 - `Amazon Simple Storage Service (Amazon S3)` - object-storage solution for any type of data
 - `Amazon S3 Transfer Acceleration` - accelerate data transfer from S3 to the edge
-- Ede locations are connected to AWS regions via `AWS backbone network` (100 Gigabit Ethernet GbE)
+- Edge locations are connected to AWS regions via `AWS backbone network` (100 Gigabit Ethernet GbE)
 - Main limitation is that edge cache size is limited. Infrequently accessed data is removed from cache to make room for new content
 
 ###### Regional edge caches
@@ -198,10 +199,10 @@ Benefits:
   - Access suport via `email, chat and phone 24/7` - Amazon calls you
   - Access to `7 basic Trusted Advisor tools` checks
 - `Developer Support Plan`
-  - Ideal if you *experimenting or thesting with AWS*
+  - Ideal if you *experimenting or testing with AWS*
   - Meant for non-production workloads and gives access to technical support
   - Reasonable price
-  - Support focus on problems with technical configuration of AWS use cases (does not offer applicaiton-layer support)
+  - Support focus on problems with technical configuration of AWS use cases (does not offer application-layer support)
   - Email support during business hours (no phone supoort)
   - General cases (`within 24 hour response time`). System-impared issues (`within 12 hours`)
 - `Business Support Plan`
@@ -235,8 +236,8 @@ Benefits:
 - `Service Health Dashboard` - Shows the health status of all AWS services (is my system down?)
 - `Personal Health Dashboard` - Published availability status of services relevant to your workloads
   - Personalized view of service health
-  - Proactive notificaitons
-  - Detail torubleshooting guidance
+  - Proactive notifications
+  - Detail troubleshooting guidance
   - Integration and automation (integrates with CloudWatch events and can launch Lambdas to automate solutions)
   - Aggregate health events across AWS Organizations
 
