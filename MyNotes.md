@@ -41,6 +41,12 @@
       - [Reviewing credital reports](#reviewing-credital-reports)
       - [AWS CLI](#aws-cli)
     - [Chapter 05 - Amazon Simple Storage Service (S3)](#chapter-05---amazon-simple-storage-service-s3)
+      - [Introduction to storage options on AWS](#introduction-to-storage-options-on-aws)
+      - [Introduction to Amazon S3](#introduction-to-amazon-s3)
+      - [Amazon S3 Glacier](#amazon-s3-glacier)
+      - [Intelligent-Tiering](#intelligent-tiering)
+      - [Amazon Storage Gateway](#amazon-storage-gateway)
+      - [Amazon Snow Family](#amazon-snow-family)
     - [Chapter 06 - AWS Networking Services - VPC, Route53, CloudFront](#chapter-06---aws-networking-services---vpc-route53-cloudfront)
     - [Chapter 07 - AWS Compute Services](#chapter-07---aws-compute-services)
     - [Chapter 08 - AWS Database Services](#chapter-08---aws-database-services)
@@ -428,6 +434,87 @@ Benefits:
 - `aws configure` - begin configuration process (need access key ID, access secret key, default region, default format)
 
 ### Chapter 05 - Amazon Simple Storage Service (S3)
+
+- `Amazon Simple Storage Solution (S3)`is an object storage solution
+
+#### Introduction to storage options on AWS
+
+- 3 Storage Options:
+  1. `Block storage`
+     - architectural design that enables the storage of data onto media such as HD, in fixed-sized chunks.
+     - `Elastic Block Store (EBS)`
+       - Use cases:
+         - file system storage
+         - large databases
+         - large applications `enterprise resource planning (ERP)` solutions
+     - Main pro: `low-latency`
+  2. `File storage`
+     - centralized location for data; organized in folder/file hierarchy
+     - main use case: file-sharing
+     - `Elastic File System (EFS)` - managed elastic filesystem
+     - `FSx for Lustre` - high performance fs, scales in GBs. High IOPS (Linux EC2)
+     - `FSx for Windows File Server` - support `Server Message Block (SMB)` protocol (Windows EC2)
+  3. `Object storage`
+     - flat file structure
+     - S3 allows you to create `buckets` which are containers that contain your data (`objects`)
+     - Use cases: store digital assets (documents, images, and video)
+     - Enables rich analytics
+
+#### Introduction to Amazon S3
+
+- S3 uptime eleven 9s.
+- bucket names must be unique
+- Objects accessible in 2 ways:
+  - `Virtual hosted-style endpoints`
+    - `https://bucket-name.s3.amazonaws.com/object-name`
+  - `Website endpoint` - bucket configured with static website hosting service
+- `Amazon S3 Transfer Acceleration (S3TA)` buckets cannot have dots
+- By default, only the resource owner can access a bucket
+- Two methods to control access to a bucket/objects:
+  1. Attach a resource-based policy (`bucket policy`)
+  2. Attach `access-control lists (ACLs)`
+- `Bucket policy` - applied directly to an entire bucket, grant access to bucket/objects inside
+![](./BucketPolicy.png)
+- `ACLs` - considered legacy (`Server access logging` use case that still requies ACLs)
+- S3 charges based on 6 components:
+  1. storage amount, duration, storage class
+  2. request/data retrievals
+  3. data transfers
+  4. use of acceleration
+  5. data management
+  6. use of `Amazon S3 Object Lambda` to transfer data
+- Storage classes:
+  - `Amazon S3 Standard` - default (durability of 11 9's and availability of 4 9's and 3 AZ replication)
+  - Infrequent storage classes have a `minimum size of 128 KB`
+  - `Amazon S3 Standard-Infrequent Access (S3 Standard-IA)`
+    - ideal for data backups and DR purposes (as available as Standard, but accessed less frequently)
+  - `Amazon S3 One Zone-Infrequent Access (S3 One Zone-IA)`
+    - IA stands for Infrequent Access
+![](./IntelligentTiering.png)
+- `Amazon Cross-Region Replication (CRR)` - is used to asynchronously copy objects across AWS buckets in different AWS Regions
+  - reduce latency, increase operation efficiency, meet reg compliance requirements
+- `Same-Region Replication (SRR)`
+- `Amazon S3 Lifecycle Management` - rules to move objects to IA or delete after a given duration
+  - Transition actions
+  - Expiration actions
+- S3 Encryption - by default objects are not encrypted
+  - `Server-side encryption` - 3 options
+    1. `Amazon S3-managed keys (SSE-S3)` - Amazon encrypts with a 256-bit `Advanced Encryption Standard (AES-256)`
+    2. `SSE with Customer Master Keys (CMKs)` stored in `AWS Key Management Service` (`SSE-KMS`)
+    3. `SSE with Customer Provided Keys (CPKs)` - (`SSE-C`) - ideal if you must manage your owns keys do to regulations
+
+#### Amazon S3 Glacier
+
+- use for archival storage (where real-time availability is not critical)
+
+#### Intelligent-Tiering
+
+- Use machine learning to automate the data storage class assignment of objects (incurs monitoring fee)
+- Not used in 30 days (S3 Standard-IA), Not used in 90 days (Amazon Glacier), Not used in 180 days (Amazon Glacier Deep Archive)
+
+#### Amazon Storage Gateway
+
+#### Amazon Snow Family
 
 ### Chapter 06 - AWS Networking Services - VPC, Route53, CloudFront
 
