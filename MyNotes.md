@@ -386,10 +386,12 @@ Benefits:
   4. `Organization Service Control Policies (SCPs)`
      - sets maximum permissions for account members of an organization
   5. `Access Control Lists (ACLs)`
-     - permissions that manage access to certain resources (grant basic read/write permissions)
-     - do not use JSON structure
-  6. `Session policies`
+  - user created policies that can be edited by the customer
+  1. `Session policies`
      - permissions when accessing a resource programatically
+     - permissions that manage access to certain resources (grant basic read/write permissions)
+
+- `IAM policy simulator` can be used to test out policies or troubleshoot any access issues
 
 ##### Type of Identity-based Policies
 
@@ -406,7 +408,6 @@ Benefits:
   - `arn:partition:service:region:account-id:resource-type:resource-id`
   - `resource-type` and `resource-id` designation vary by service
 
-- `IAM policy simulator` can be used to test out policies or troubleshoot any access issues
 
 #### IAM Roles
 
