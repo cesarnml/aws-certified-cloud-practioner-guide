@@ -43,6 +43,7 @@
     - [Chapter 05 - Amazon Simple Storage Service (S3)](#chapter-05---amazon-simple-storage-service-s3)
       - [Introduction to storage options on AWS](#introduction-to-storage-options-on-aws)
       - [Introduction to Amazon S3](#introduction-to-amazon-s3)
+      - [Amazon S3TA](#amazon-s3ta)
       - [Amazon S3 Glacier](#amazon-s3-glacier)
       - [Intelligent-Tiering](#intelligent-tiering)
       - [Amazon Storage Gateway](#amazon-storage-gateway)
@@ -504,9 +505,20 @@ Benefits:
     2. `SSE with Customer Master Keys (CMKs)` stored in `AWS Key Management Service` (`SSE-KMS`)
     3. `SSE with Customer Provided Keys (CPKs)` - (`SSE-C`) - ideal if you must manage your owns keys do to regulations
 
+#### Amazon S3TA
+
+- `Amazon S3 Transfer Acceleration (S3TA)` - allows for faster transfer of data to and from S3 (via CloudFront)
+
 #### Amazon S3 Glacier
 
 - use for archival storage (where real-time availability is not critical)
+- data not immediately accessible; must require a retrieval job first
+- data is archieve as `.zip` or `.tar` (1 byte to 40 terabytes as opposed to 5 TB limit on S3
+- can group up data in `vaults`; region specific
+- `Write Once Read Many (WORM)` special vault lock policies or time-based record retention to comply with regulations
+- `Retrieval Options`:
+  - Amazon S3 Glacier (Standard (3-5 hours), Expedited (1-5 minutes for 250MB), Bulk (5-12 hours))
+  - Amazon S3 Glacier Deep Archiv (Standard (12 hours), Bulk (petabytes in 48 hours))
 
 #### Intelligent-Tiering
 
@@ -515,7 +527,21 @@ Benefits:
 
 #### Amazon Storage Gateway
 
+- `Amazon Storage Gateway` - allows a customer to connect their on-premise resources to Amazon S3
+  w with S3 object versioning enabled! Boom!
+- Protocols: `Network File System (NFS)`, `Simple Message Block (SMB)`, `Internet Small Computer System Interface (iSCSI)`
+- Use `virtual private network (VPN)` or `AWS Direct Connect`
+- Deployment options:
+
+- `File Gateway` - enables connection via NFS/SMB protocols
+  - `Amazon S3 File Gateway` vs `Amazon FSx File Gateway (allows for Active Directory (AD) integration)`
+- `Volume Gateway` - block storage volumes via iSCSI. Modes `Cache mode, Store mode, Tape Gateway`
+
 #### Amazon Snow Family
+
+- `Trusted Platform Module (TPM)` - used to detect unauthorized modifivations to hardware, software or firmware
+- Basically big ass usb drives to physically transfer data to S3
+- `Snowball Edge Compute Optimized (ML, 52 vCPU, GPU, 42 TB and 7.68 SSD)` vs `Snowball Edge Storage Optimized (80TB HD and 1TB SATA (serial advanced technology attachement)`
 
 ### Chapter 06 - AWS Networking Services - VPC, Route53, CloudFront
 
