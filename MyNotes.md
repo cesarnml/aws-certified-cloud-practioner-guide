@@ -49,6 +49,12 @@
       - [Amazon Storage Gateway](#amazon-storage-gateway)
       - [Amazon Snow Family](#amazon-snow-family)
     - [Chapter 06 - AWS Networking Services - VPC, Route53, CloudFront](#chapter-06---aws-networking-services---vpc-route53-cloudfront)
+      - [On-Premise Networks](#on-premise-networks)
+      - [IP Addressing, Port Numbers, Subnet Masks, and CIDRs Fundamentals](#ip-addressing-port-numbers-subnet-masks-and-cidrs-fundamentals)
+      - [Amazon Virtual Private Cloud (VPC)](#amazon-virtual-private-cloud-vpc)
+      - [Basic DNS and Routing with Amazon Route53](#basic-dns-and-routing-with-amazon-route53)
+      - [Amazon CloudFront](#amazon-cloudfront)
+      - [API Gateway Intro](#api-gateway-intro)
     - [Chapter 07 - AWS Compute Services](#chapter-07---aws-compute-services)
     - [Chapter 08 - AWS Database Services](#chapter-08---aws-database-services)
     - [Chapter 09 - High Availability and Elasticity on AWS](#chapter-09---high-availability-and-elasticity-on-aws)
@@ -544,6 +550,22 @@ Benefits:
 - `Snowball Edge Compute Optimized (ML, 52 vCPU, GPU, 42 TB and 7.68 SSD)` vs `Snowball Edge Storage Optimized (80TB HD and 1TB SATA (serial advanced technology attachement)`
 
 ### Chapter 06 - AWS Networking Services - VPC, Route53, CloudFront
+
+- `Virtual Private Cloud (VPC)` - enables customers to build multiple isolated and secure networks within AWS
+- `AWS Route53` - DNS service that allows you to map domain names to IP addresses
+- `Amazon CloudFront` - web content delivery network
+
+#### On-Premise Networks
+
+#### IP Addressing, Port Numbers, Subnet Masks, and CIDRs Fundamentals
+
+#### Amazon Virtual Private Cloud (VPC)
+
+#### Basic DNS and Routing with Amazon Route53
+
+#### Amazon CloudFront
+
+#### API Gateway Intro
 
 ### Chapter 07 - AWS Compute Services
 
