@@ -557,6 +557,8 @@ Benefits:
 
 #### On-Premise Networks
 
+
+
 #### IP Addressing, Port Numbers, Subnet Masks, and CIDRs Fundamentals
 
 #### Amazon Virtual Private Cloud (VPC)
