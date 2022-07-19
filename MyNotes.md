@@ -601,6 +601,7 @@ Benefits:
   - SGs operate at the `instance-level`
 - `Network Access Control Lists (NACLs)` - operate at the `subnet-level`
   - `NACLs` are `stateless` - require explict config of both inbound and outbound traffic
+  - Can be used to deny a specific range of IPs access
 - `Network Address Translation (NAT)` - acts are a proxy in order to route network traffic to private VPCs (such as DB instances)
 - `VPC peering` - is a private network connection between two VPCs
 - `VPC transit gateway` - simplifies setting up multi-interconnected VPC peering
@@ -609,14 +610,46 @@ Benefits:
 - `Virtual Private Network (VPC)` - secure encrypted site-to-site tunnel established between endpoints over the internet
   - `AES 128 or 256-bit` - `Internet Protocol security (IPsec)` encryption
   - Need to create a `Virtual Private Gateway (VPG)` to connect VPC to on-premise network
+  - 1.26 Gpbs hard limit
 ![](./VirutalPrivateNetwork.png)
 - `Direct Connect` - enables you to connect on-premise network to VPC via a dedicated private connection that pypasses the internet
+  - Expensive because requires setting up a fiber optic connection between on-premise network and `Amazon Direct Connect`
+  - 1, 10, 100 Gbps
 
 #### Basic DNS and Routing with Amazon Route53
 
+- `Amazon Route53`- is Amazon's global DNS - service that translates human-readable names into an IP address
+  - 3 Main functions:
+    - `Domain registration`
+      - `Top-Level Domain (TLD)`
+    - `DNS routing`
+      - `Simply Routing Policy` - default routing policy
+      - `Failover Routing Policy`
+      - `Geolocation Routing Policy`
+      - `Latency Routing Policy`
+      - `Weighted Routing Policy`
+    - `Health checks`
+      - `traffic policy`- limited to public hosted zones
+![](./DomainNameResourceRecordExamples.png)
+- `zone file` - host resource records for your domai
+- `hosted zone` container used to store and manager resource records. define how traffic should be routed
+- 2 Types of Hosted Zones:
+  - `public hosted zone`
+    - determines how internet request are routed
+  - `privated hosted zone`
+    - private network routes
+
 #### Amazon CloudFront
 
+- `Amazon CloudFront` - CDN distributes static and dynamic content globally, low-latency. AWS edge locations
+  - `time-to-live (TTL)`
+  - default price tier as global, best performance but most expensive tier
+
 #### API Gateway Intro
+
+- `Amazon API Gateway` - design microservice applications
+  - acts as a "front door" for your application to access backend data, Lambda functions, databases, and more
+  - also helps protect from `Distributed Denial of Service (DDoS) attacks`
 
 ### Chapter 07 - AWS Compute Services
 
