@@ -56,6 +56,11 @@
       - [Amazon CloudFront](#amazon-cloudfront)
       - [API Gateway Intro](#api-gateway-intro)
     - [Chapter 07 - AWS Compute Services](#chapter-07---aws-compute-services)
+      - [Elastic Compute Service (Amazon EC2)](#elastic-compute-service-amazon-ec2)
+      - [Elastic Block Storage (EBS)](#elastic-block-storage-ebs)
+      - [Amazon Elastic File System (Amazon EFS)](#amazon-elastic-file-system-amazon-efs)
+      - [Virtual Private Servers (VPS)](#virtual-private-servers-vps)
+      - [Elastic Container Services (ECS)](#elastic-container-services-ecs)
     - [Chapter 08 - AWS Database Services](#chapter-08---aws-database-services)
     - [Chapter 09 - High Availability and Elasticity on AWS](#chapter-09---high-availability-and-elasticity-on-aws)
     - [Chapter 10 - Application Integration Services](#chapter-10---application-integration-services)
@@ -649,9 +654,19 @@ Benefits:
 
 - `Amazon API Gateway` - design microservice applications
   - acts as a "front door" for your application to access backend data, Lambda functions, databases, and more
-  - also helps protect from `Distributed Denial of Service (DDoS) attacks`
+  - also helps protect from `Distributed Denial of Service (DDoS) attackomplete chapter 06 notes
 
 ### Chapter 07 - AWS Compute Services
+
+#### Elastic Compute Service (Amazon EC2)
+
+#### Elastic Block Storage (EBS)
+
+#### Amazon Elastic File System (Amazon EFS)
+
+#### Virtual Private Servers (VPS)
+
+#### Elastic Container Services (ECS)
 
 ### Chapter 08 - AWS Database Services
 
