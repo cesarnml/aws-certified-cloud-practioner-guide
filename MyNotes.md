@@ -557,11 +557,60 @@ Benefits:
 
 #### On-Premise Networks
 
-
+- Corporate networks are generally divided into two separate networks:
+  - Internal Network
+    - `End User Computing (EUC) Virtual LAN (vLAN)`
+    - `Demilitarized Zone (DMZ)` - are where services are deployed that can be exposed to the internet
 
 #### IP Addressing, Port Numbers, Subnet Masks, and CIDRs Fundamentals
 
+- `Internet Protocol address (IP address)` Two versions IPv4 and IPv6
+  - 32^2 (IPv4) / 128^2 (IPv6) ... 4.29 billion limitation
+- `Internet Assigned Numbers Authority (IANA)` - responsible for assigning IP addresses to networks
+![](./InternalPrivateNetworkIPs.png)
+- `Network Address Translation (NAT)` - translates IP addresses from one network to another
+- `Internet Engineering Task Force (IETF)` - `IPv4` and `IPv6` (1990s) standards
+~[](./NetworkSizeAndClasses.png)
+- First IP address is known as the `network ID - 192.168.1.0`
+- Last IP address is known as the `broadcast address - 192.168.1.255`
+- Supports 254 hosts
+- `Subnet marks` - allow you to split an IP address block into a network portion and a host portion
+- `Class A network` - subnet mask `255.0.0.0`
+- `Class C network` - subnet mask `255.255.255.0`
+- `Classless Interdomain Routing (CIDR)` - is essentially another way to represent subnet masks but offers more flexibility
+
 #### Amazon Virtual Private Cloud (VPC)
+
+- `Amazon Virtual Private Cloud (Amazon VPC)` - is a virtual network in the cloud
+- `Subnets` are restricted to a single Avalability Zone (AZ)
+  - This allows for High Availability via subnet replication of resources on additional AZs
+- Need to deploy and `Internet Gateway` in order to grant a `VPC` internet access
+![](./PublicAndPrivateVPC.png)
+- VPC Security:
+  - `Security Group`:
+    - is a firewall that let's you configure what type of traffic is permitted (inbound/outbound) to EC2 instance
+    - EC2 launch requires at least one attached Security Group; up to max of 5 SCs
+  - `Network Access Control Lists (NACLs)`
+- The default SC allows all inbound traffic from instances within the same SC and allows all outbound traffic. In bound traffic outside of the security group is blocked by default
+- SGs are `stateful`
+- Responses to outbound requests are allowed by default. Outbound responses to allowed in-bound requests are also allowed by default.
+- Security Groups:
+  - You can configure `allow` rules but not `deny` rules
+  - You can separate rules for inbound and outbound traffic
+  - You can filter traffic based on `protocols` and `port` numbers
+  - SGs operate at the `instance-level`
+- `Network Access Control Lists (NACLs)` - operate at the `subnet-level`
+  - `NACLs` are `stateless` - require explict config of both inbound and outbound traffic
+- `Network Address Translation (NAT)` - acts are a proxy in order to route network traffic to private VPCs (such as DB instances)
+- `VPC peering` - is a private network connection between two VPCs
+- `VPC transit gateway` - simplifies setting up multi-interconnected VPC peering
+![](./ComplicateMultipleVPCPeering.png)
+![](./AWSTransitGateway.png)
+- `Virtual Private Network (VPC)` - secure encrypted site-to-site tunnel established between endpoints over the internet
+  - `AES 128 or 256-bit` - `Internet Protocol security (IPsec)` encryption
+  - Need to create a `Virtual Private Gateway (VPG)` to connect VPC to on-premise network
+![](./VirutalPrivateNetwork.png)
+- `Direct Connect` - enables you to connect on-premise network to VPC via a dedicated private connection that pypasses the internet
 
 #### Basic DNS and Routing with Amazon Route53
 
